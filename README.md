@@ -36,14 +36,12 @@ The **Student Attendance Management System** is designed to streamline the atten
 ### 1. Class Diagram
 The system follows Object-Oriented Design principles, managing strict relationships between `User`, `Student`, `Professor`, and academic entities.
 
-![Class Diagram](<img width="692" height="637" alt="ClassDiagram" src="https://github.com/user-attachments/assets/3b622b14-4d60-44ea-9967-1d82222fbfa1" />
-)
+![Class Diagram](D:\Tài liệu\HK6\Cong nghe phan mem\Attendance Student System\Img\ClassDiagram.png)
 
 ### 2. Database Schema (ERD)
 The database is optimized for SQL Server, effectively handling **Inheritance** (Users table) and **Many-to-Many relationships** (Enrollments).
 
-![ERD Schema](<img width="918" height="729" alt="ERD" src="https://github.com/user-attachments/assets/51354257-f636-4005-bb79-499d58b6a970" />
-)
+![ERD Schema](D:\Tài liệu\HK6\Cong nghe phan mem\Attendance Student System\Img\ERD.png)
 
 
 **Key Database Tables:**
