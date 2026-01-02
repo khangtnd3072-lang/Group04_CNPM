@@ -41,7 +41,7 @@ The system follows Object-Oriented Design principles, managing strict relationsh
 ### 2. Database Schema (ERD)
 The database is optimized for SQL Server, effectively handling **Inheritance** (Users table) and **Many-to-Many relationships** (Enrollments).
 
-![ERD Schema](D:\Tài liệu\HK6\Cong nghe phan mem\Attendance Student System\Img\ERD.png)
+![ERD Schema](https://github.com/khangtnd3072-lang/Group04_CNPM/blob/676d2b06f4f138f20776dcc4cfbd688370e6085a/ERD.png)
 
 
 **Key Database Tables:**
