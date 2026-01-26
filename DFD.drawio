@@ -1,0 +1,209 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36" version="29.2.9" pages="2">
+  <diagram name="Trang-1" id="1Z_U6NIymIZJq0WgQAsh">
+    <mxGraphModel grid="0" page="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="3-z0BCA0mgMv49HLwTDC-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Student" vertex="1">
+          <mxGeometry height="186" width="120" x="154" y="285.5" as="geometry" />
+        </mxCell>
+        <mxCell id="3-z0BCA0mgMv49HLwTDC-12" edge="1" parent="1" source="3-z0BCA0mgMv49HLwTDC-3" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" target="T-Cnm-jM9FtAvhGasjmD-3" value="Attendance Request">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint x="449" y="521" as="sourcePoint" />
+            <mxPoint x="544" y="415" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3-z0BCA0mgMv49HLwTDC-13" edge="1" parent="1" source="T-Cnm-jM9FtAvhGasjmD-3" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;entryX=1;entryY=0.669;entryDx=0;entryDy=0;exitX=0;exitY=1;exitDx=0;exitDy=0;entryPerimeter=0;" target="3-z0BCA0mgMv49HLwTDC-3" value="Attendance Results">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <Array as="points">
+              <mxPoint x="612" y="406" />
+            </Array>
+            <mxPoint x="544" y="485" as="sourcePoint" />
+            <mxPoint x="529" y="521" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3-z0BCA0mgMv49HLwTDC-16" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Lectureer&lt;/font&gt;" vertex="1">
+          <mxGeometry height="185" width="120" x="986" y="286" as="geometry" />
+        </mxCell>
+        <mxCell id="3-z0BCA0mgMv49HLwTDC-17" edge="1" parent="1" source="T-Cnm-jM9FtAvhGasjmD-3" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" target="3-z0BCA0mgMv49HLwTDC-16" value="Attendance Report">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint x="704.0000000000002" y="415" as="sourcePoint" />
+            <mxPoint x="869" y="442" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3-z0BCA0mgMv49HLwTDC-18" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Administrator&lt;/font&gt;" vertex="1">
+          <mxGeometry height="152" width="120" x="248" y="581" as="geometry" />
+        </mxCell>
+        <mxCell id="3-z0BCA0mgMv49HLwTDC-19" edge="1" parent="1" source="3-z0BCA0mgMv49HLwTDC-18" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;exitX=0.992;exitY=0.294;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.279;entryY=0.961;entryDx=0;entryDy=0;entryPerimeter=0;edgeStyle=orthogonalEdgeStyle;" target="T-Cnm-jM9FtAvhGasjmD-3" value="Class Management Data">
+          <mxGeometry relative="1" width="80" x="-0.3985" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="567" y="273" as="sourcePoint" />
+            <mxPoint x="584" y="509" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3-z0BCA0mgMv49HLwTDC-21" edge="1" parent="1" source="T-Cnm-jM9FtAvhGasjmD-3" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;exitX=0.647;exitY=0.993;exitDx=0;exitDy=0;exitPerimeter=0;edgeStyle=orthogonalEdgeStyle;" target="3-z0BCA0mgMv49HLwTDC-18" value="Attandance Summary Report">
+          <mxGeometry relative="1" width="80" x="0.5036" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="647" y="515" as="sourcePoint" />
+            <mxPoint x="658" y="1131" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3-z0BCA0mgMv49HLwTDC-22" edge="1" parent="1" source="3-z0BCA0mgMv49HLwTDC-16" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;" target="T-Cnm-jM9FtAvhGasjmD-3" value="Attendance Data">
+          <mxGeometry relative="1" width="80" x="0.0317" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="808" y="508" as="sourcePoint" />
+            <mxPoint x="704.0000000000002" y="485" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T-Cnm-jM9FtAvhGasjmD-3" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;" value="&lt;span style=&quot;font-size: 16px;&quot;&gt;Student Attendance System&lt;/span&gt;" vertex="1">
+          <mxGeometry height="131" width="136" x="579" y="313" as="geometry" />
+        </mxCell>
+        <mxCell id="XzGGEhNg8_so4lbpaMJi-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;fontSize=12;" value="&lt;h3 data-start=&quot;295&quot; data-end=&quot;339&quot;&gt;Process 0 – Student Attendance System&lt;/h3&gt;&lt;p data-start=&quot;341&quot; data-end=&quot;677&quot;&gt;Student Attendance System là hệ thống thực hiện quản lý và xử lý toàn bộ hoạt động điểm danh sinh viên. Hệ thống tiếp nhận thông tin điểm danh và yêu cầu tra cứu từ Student, Lecturer và Administrator; xử lý, lưu trữ dữ liệu điểm danh; đồng thời cung cấp kết quả điểm danh và các báo cáo tổng hợp cho các tác nhân liên quan.&lt;/p&gt;" vertex="1">
+          <mxGeometry height="135" width="630" x="132" y="892" as="geometry" />
+        </mxCell>
+        <mxCell id="l05c7gWxZLDBTVWsR1n9-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;h3 data-start=&quot;156&quot; data-end=&quot;200&quot;&gt;Process 0 – Student Attendance System&lt;/h3&gt;&lt;p data-start=&quot;202&quot; data-end=&quot;570&quot;&gt;The Student Attendance System is responsible for managing and processing all student attendance activities. The system receives attendance information and inquiry requests from Students, Lecturers, and Administrators; processes and stores attendance data; and provides attendance results as well as summary reports to the relevant external entities.&lt;/p&gt;" vertex="1">
+          <mxGeometry height="191" width="622" x="135" y="1033" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="8wxVRJAr71lQrpEbM1q3" name="Trang-2">
+    <mxGraphModel grid="0" page="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="oM-oBhlvlgIx6OTwVApL-1" parent="1" style="html=1;whiteSpace=wrap;" value="Student" vertex="1">
+          <mxGeometry height="95" width="110" x="-392" y="-273" as="geometry" />
+        </mxCell>
+        <mxCell id="oM-oBhlvlgIx6OTwVApL-2" parent="1" style="html=1;whiteSpace=wrap;" value="Lecturer" vertex="1">
+          <mxGeometry height="99" width="110" x="-392" y="-121" as="geometry" />
+        </mxCell>
+        <mxCell id="oM-oBhlvlgIx6OTwVApL-3" parent="1" style="html=1;whiteSpace=wrap;" value="Administrator" vertex="1">
+          <mxGeometry height="109" width="110" x="-392" y="-438" as="geometry" />
+        </mxCell>
+        <mxCell id="oM-oBhlvlgIx6OTwVApL-8" parent="1" style="shape=partialRectangle;whiteSpace=wrap;html=1;left=0;right=0;fillColor=none;" value="" vertex="1">
+          <mxGeometry height="60" width="120" x="93" y="-393.5" as="geometry" />
+        </mxCell>
+        <mxCell id="oM-oBhlvlgIx6OTwVApL-9" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Student Database" vertex="1">
+          <mxGeometry height="30" width="60" x="123" y="-378.5" as="geometry" />
+        </mxCell>
+        <mxCell id="oM-oBhlvlgIx6OTwVApL-10" parent="1" style="shape=partialRectangle;whiteSpace=wrap;html=1;left=0;right=0;fillColor=none;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="57" width="120" x="-967" y="-419" as="geometry" />
+        </mxCell>
+        <mxCell id="oM-oBhlvlgIx6OTwVApL-11" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Class &amp;amp; Subject Database" vertex="1">
+          <mxGeometry height="30" width="90" x="-952" y="-405.5" as="geometry" />
+        </mxCell>
+        <mxCell id="oM-oBhlvlgIx6OTwVApL-13" parent="1" style="shape=partialRectangle;whiteSpace=wrap;html=1;left=0;right=0;fillColor=none;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="60" width="120" x="93" y="-393.5" as="geometry" />
+        </mxCell>
+        <mxCell id="oM-oBhlvlgIx6OTwVApL-14" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Student Database" vertex="1">
+          <mxGeometry height="30" width="60" x="123" y="-378.5" as="geometry" />
+        </mxCell>
+        <mxCell id="oM-oBhlvlgIx6OTwVApL-15" parent="1" style="shape=partialRectangle;whiteSpace=wrap;html=1;left=0;right=0;fillColor=none;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="57" width="120" x="114" y="-109" as="geometry" />
+        </mxCell>
+        <mxCell id="oM-oBhlvlgIx6OTwVApL-16" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value=" Attendance Database" vertex="1">
+          <mxGeometry height="30" width="90" x="129" y="-95.5" as="geometry" />
+        </mxCell>
+        <mxCell id="jV-1xvJx3vHNfV0oHtzl-1" edge="1" parent="1" source="oM-oBhlvlgIx6OTwVApL-1" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;exitX=1;exitY=0.75;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" value="&lt;div&gt;Attendance Information&lt;/div&gt;">
+          <mxGeometry relative="1" width="80" x="-0.2553" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="-581" y="-88" as="sourcePoint" />
+            <mxPoint x="-79" y="-167" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jV-1xvJx3vHNfV0oHtzl-2" edge="1" parent="1" source="Xo0Q58JkT5ogvpI0VWzH-4" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;exitX=0.978;exitY=0.378;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitPerimeter=0;" target="oM-oBhlvlgIx6OTwVApL-1" value="&lt;div&gt;Attendance Results&lt;/div&gt;">
+          <mxGeometry relative="1" width="80" x="0.3354" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="-572" y="-104" />
+              <mxPoint x="-572" y="-225" />
+            </Array>
+            <mxPoint x="-497" y="-117" as="sourcePoint" />
+            <mxPoint x="-474" y="-105" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jV-1xvJx3vHNfV0oHtzl-3" edge="1" parent="1" source="oM-oBhlvlgIx6OTwVApL-2" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.006;entryY=0.636;entryDx=0;entryDy=0;entryPerimeter=0;" value="&lt;div&gt;Attendance Data&lt;/div&gt;">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint x="-250" y="-83" as="sourcePoint" />
+            <mxPoint x="-158.03999999999996" y="-72.48000000000002" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jV-1xvJx3vHNfV0oHtzl-5" edge="1" parent="1" source="Xo0Q58JkT5ogvpI0VWzH-4" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=0.942;exitY=0.711;exitDx=0;exitDy=0;entryX=0;entryY=0.596;entryDx=0;entryDy=0;entryPerimeter=0;exitPerimeter=0;" target="oM-oBhlvlgIx6OTwVApL-2" value="&lt;div&gt;Attendance Report&lt;/div&gt;">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint x="-497" y="-64.5" as="sourcePoint" />
+            <mxPoint x="-472" y="-70" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jV-1xvJx3vHNfV0oHtzl-6" edge="1" parent="1" source="oM-oBhlvlgIx6OTwVApL-3" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="Xo0Q58JkT5ogvpI0VWzH-1" value="&lt;div&gt;Student Management Data&lt;/div&gt;">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint x="-208" y="-346" as="sourcePoint" />
+            <mxPoint x="-130" y="-409.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jV-1xvJx3vHNfV0oHtzl-7" edge="1" parent="1" source="oM-oBhlvlgIx6OTwVApL-3" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.25;exitY=0;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" target="Xo0Q58JkT5ogvpI0VWzH-6" value="&lt;div&gt;Class &amp;amp; Subject Management Data&lt;/div&gt;">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint x="-382" y="-259" as="sourcePoint" />
+            <mxPoint x="-574" y="-481" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jV-1xvJx3vHNfV0oHtzl-8" edge="1" parent="1" source="Xo0Q58JkT5ogvpI0VWzH-4" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;entryX=0;entryY=0.25;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" target="oM-oBhlvlgIx6OTwVApL-3" value="&lt;div&gt;Summary Report&lt;/div&gt;">
+          <mxGeometry relative="1" width="80" x="0.3301" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="-671" y="-233" as="sourcePoint" />
+            <mxPoint x="-634" y="-286" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jV-1xvJx3vHNfV0oHtzl-9" edge="1" parent="1" source="oM-oBhlvlgIx6OTwVApL-13" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;entryX=0.978;entryY=0.435;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryPerimeter=0;" target="Xo0Q58JkT5ogvpI0VWzH-1" value="&lt;div&gt;Student Information&lt;/div&gt;">
+          <mxGeometry relative="1" width="80" x="0.3651" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="170" y="-393" />
+              <mxPoint x="170" y="-427" />
+            </Array>
+            <mxPoint x="279" y="-449" as="sourcePoint" />
+            <mxPoint x="30" y="-427" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jV-1xvJx3vHNfV0oHtzl-10" edge="1" parent="1" source="oM-oBhlvlgIx6OTwVApL-10" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="Xo0Q58JkT5ogvpI0VWzH-6" value="&lt;div&gt;&lt;div&gt;Class &amp;amp; Subject Information&lt;/div&gt;&lt;/div&gt;">
+          <mxGeometry relative="1" width="80" x="0.3285" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="-944" y="-456" as="sourcePoint" />
+            <mxPoint x="-734" y="-498.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jV-1xvJx3vHNfV0oHtzl-11" edge="1" parent="1" source="oM-oBhlvlgIx6OTwVApL-15" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;exitX=0.25;exitY=0;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;entryX=0.958;entryY=0.293;entryDx=0;entryDy=0;entryPerimeter=0;" target="Xo0Q58JkT5ogvpI0VWzH-3" value="dispatch">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint x="206" y="-195" as="sourcePoint" />
+            <mxPoint x="1" y="-137" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wgtdfiRI5gDR3da9hAQa-1" edge="1" parent="1" source="oM-oBhlvlgIx6OTwVApL-3" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;" target="Xo0Q58JkT5ogvpI0VWzH-4" value="Attendance Report Request">
+          <mxGeometry relative="1" width="80" x="-0.5243" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="-546" y="-320" as="sourcePoint" />
+            <mxPoint x="-580" y="-173" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wgtdfiRI5gDR3da9hAQa-2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;h3 data-start=&quot;910&quot; data-end=&quot;948&quot;&gt;Manage Student Information&lt;/h3&gt;&lt;p data-start=&quot;949&quot; data-end=&quot;1195&quot;&gt;&lt;br&gt;Tiến trình này tiếp nhận thông tin quản lý sinh viên từ Administrator, thực hiện thêm, cập nhật hoặc xóa dữ liệu sinh viên và lưu trữ vào cơ sở dữ liệu sinh viên. Dữ liệu sinh viên được cung cấp cho các tiến trình khác khi cần thiết.&lt;/p&gt;&lt;h3 data-start=&quot;1202&quot; data-end=&quot;1236&quot;&gt;Manage Class &amp;amp; Subject&lt;/h3&gt;&lt;p data-start=&quot;1237&quot; data-end=&quot;1441&quot;&gt;Tiến trình này tiếp nhận thông tin quản lý lớp học và môn học từ Administrator, xử lý và lưu trữ dữ liệu lớp, môn học vào cơ sở dữ liệu lớp &amp;amp; môn học để phục vụ cho việc điểm danh và báo cáo.&lt;/p&gt;&lt;h3 data-start=&quot;1448&quot; data-end=&quot;1477&quot;&gt;&amp;nbsp;Record Attendance&lt;/h3&gt;&lt;p data-start=&quot;1478&quot; data-end=&quot;1689&quot;&gt;Tiến trình này tiếp nhận dữ liệu điểm danh từ Lecturer và thông tin điểm danh từ Student, thực hiện ghi nhận trạng thái có mặt hoặc vắng mặt của sinh viên và lưu kết quả vào cơ sở dữ liệu điểm danh.&lt;/p&gt;&lt;h3 data-start=&quot;1696&quot; data-end=&quot;1732&quot;&gt;View Attendance &amp;amp; Report&lt;/h3&gt;&lt;p data-start=&quot;1733&quot; data-end=&quot;1949&quot;&gt;Tiến trình này tiếp nhận yêu cầu tra cứu từ Student, Lecturer và Administrator, tổng hợp dữ liệu điểm danh từ cơ sở dữ liệu và cung cấp kết quả điểm danh hoặc báo cáo tổng hợp cho các tác nhân tương ứng.&lt;/p&gt;" vertex="1">
+          <mxGeometry height="365" width="912" x="-978" y="36" as="geometry" />
+        </mxCell>
+        <mxCell id="Xo0Q58JkT5ogvpI0VWzH-1" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;" value="Manage Student Information" vertex="1">
+          <mxGeometry height="131" width="135" x="-115" y="-475" as="geometry" />
+        </mxCell>
+        <mxCell id="Xo0Q58JkT5ogvpI0VWzH-3" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;" value="Record Attendance" vertex="1">
+          <mxGeometry height="140" width="143" x="-162" y="-167" as="geometry" />
+        </mxCell>
+        <mxCell id="Xo0Q58JkT5ogvpI0VWzH-4" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;" value="&lt;span style=&quot;text-align: left;&quot;&gt;View Attendance &amp;amp; Report&lt;/span&gt;" vertex="1">
+          <mxGeometry height="135" width="138" x="-723" y="-159" as="geometry" />
+        </mxCell>
+        <mxCell id="Xo0Q58JkT5ogvpI0VWzH-6" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;" value="Manage Class &amp;amp; Subject" vertex="1">
+          <mxGeometry height="138" width="137" x="-723" y="-564" as="geometry" />
+        </mxCell>
+        <mxCell id="FUi9rCjM3Zk_yAMaSlRt-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;h3 data-start=&quot;153&quot; data-end=&quot;191&quot;&gt;Manage Student Information&lt;/h3&gt;&lt;p data-start=&quot;193&quot; data-end=&quot;474&quot;&gt;This process receives student management information from the Administrator, performs operations such as adding, updating, or deleting student records, and stores the data in the student database. Student information is provided to other processes when required.&lt;/p&gt;&lt;h3 data-start=&quot;481&quot; data-end=&quot;515&quot;&gt;Manage Class &amp;amp; Subject&lt;/h3&gt;&lt;p data-start=&quot;517&quot; data-end=&quot;758&quot;&gt;This process receives class and subject management information from the Administrator, processes and stores class and subject data in the class and subject database to support attendance recording and reporting activities.&lt;/p&gt;&lt;h3 data-start=&quot;765&quot; data-end=&quot;794&quot;&gt;&amp;nbsp;Record Attendance&lt;/h3&gt;&lt;p data-start=&quot;796&quot; data-end=&quot;1029&quot;&gt;This process receives attendance data from the Lecturer and attendance information from the Student, records the attendance status (present or absent) of students, and stores the results in the attendance database.&lt;/p&gt;&lt;h3 data-start=&quot;1036&quot; data-end=&quot;1072&quot;&gt;&amp;nbsp;View Attendance &amp;amp; Report&lt;/h3&gt;&lt;p data-start=&quot;1074&quot; data-end=&quot;1328&quot;&gt;This process receives inquiry and report requests from Students, Lecturers, and the Administrator, aggregates attendance data from the database, and provides attendance results or summary reports to the corresponding external entities.&lt;/p&gt;" vertex="1">
+          <mxGeometry height="298" width="905" x="-978" y="472" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
