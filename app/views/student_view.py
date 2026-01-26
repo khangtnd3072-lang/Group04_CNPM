@@ -3,18 +3,18 @@ from tkinter import messagebox
 from datetime import datetime
 from controllers import StudentController
 
-# --- MÀU SẮC ---
+# --- MÀU SẮC GIAO DIỆN ---
 COLOR_BG_MAIN = "#F5F7FA"
 COLOR_WHITE = "#FFFFFF"
 COLOR_TEXT_PRIMARY = "#1F2937"
 COLOR_TEXT_SECONDARY = "#6B7280"
-COLOR_ACCENT_GREEN = "#10B981"
+COLOR_ACCENT_GREEN = "#10B981"  # Màu xanh lá (Thành công/Có mặt)
 COLOR_BG_GREEN = "#D1FAE5"
-COLOR_ACCENT_RED = "#EF4444"
+COLOR_ACCENT_RED = "#EF4444"    # Màu đỏ (Vắng/Thất bại)
 COLOR_BG_RED = "#FEE2E2"
-COLOR_ACCENT_YELLOW = "#F59E0B"
+COLOR_ACCENT_YELLOW = "#F59E0B" # Màu vàng (Có phép)
 COLOR_BG_YELLOW = "#FEF3C7"
-COLOR_BLUE = "#2563EB"
+COLOR_BLUE = "#2563EB"          # Màu xanh dương (Nút bấm)
 
 class StudentView(ctk.CTkFrame):
     def __init__(self, parent, controller):
@@ -23,26 +23,31 @@ class StudentView(ctk.CTkFrame):
         self.student_id = None
         self.current_user_name = "Sinh viên"
         
-        self.grid_columnconfigure(0, weight=3) # Sidebar
-        self.grid_columnconfigure(1, weight=7) # Main
+        # Bố cục: Cột 0 (Sidebar môn học) nhỏ, Cột 1 (Nội dung chính) lớn
+        self.grid_columnconfigure(0, weight=3)
+        self.grid_columnconfigure(1, weight=7)
         self.grid_rowconfigure(1, weight=1)
 
+        # --- HEADER ---
         self._setup_header()
 
-        # Sidebar
+        # --- SIDEBAR (Danh sách môn học) ---
         self.sidebar = ctk.CTkScrollableFrame(self, fg_color="transparent")
         self.sidebar.grid(row=1, column=0, sticky="nsew", padx=20, pady=10)
+        
         ctk.CTkLabel(self.sidebar, text="Môn học của bạn", font=("Arial", 16, "bold"), text_color=COLOR_TEXT_PRIMARY).pack(anchor="w", pady=(0, 10))
         self.subject_container = ctk.CTkFrame(self.sidebar, fg_color="transparent")
         self.subject_container.pack(fill="x")
 
-        # Main Content
+        # --- MAIN CONTENT (Chi tiết & Điểm danh) ---
         self.main_area = ctk.CTkScrollableFrame(self, fg_color="transparent")
         self.main_area.grid(row=1, column=1, sticky="nsew", padx=(0, 20), pady=10)
         
+        # Card chứa nội dung chi tiết
         self.detail_card = ctk.CTkFrame(self.main_area, fg_color=COLOR_WHITE, corner_radius=15)
         self.detail_card.pack(fill="both", expand=True)
         
+        # Placeholder khi chưa chọn môn
         self.lbl_placeholder = ctk.CTkLabel(self.detail_card, text="← Chọn môn học để xem chi tiết", text_color="gray", font=("Arial", 14))
         self.lbl_placeholder.place(relx=0.5, rely=0.5, anchor="center")
 
@@ -50,22 +55,25 @@ class StudentView(ctk.CTkFrame):
         header = ctk.CTkFrame(self, fg_color=COLOR_WHITE, height=60, corner_radius=0)
         header.grid(row=0, column=0, columnspan=2, sticky="ew", pady=(0, 20))
         
+        # Avatar giả lập
         self.avatar = ctk.CTkButton(header, text="SV", width=40, height=40, corner_radius=20, fg_color="#E5E7EB", text_color="black", hover=False)
         self.avatar.pack(side="left", padx=(20, 10), pady=10)
         
-        self.lbl_welcome = ctk.CTkLabel(header, text="Loading...", font=("Arial", 14, "bold"), text_color="black")
+        self.lbl_welcome = ctk.CTkLabel(header, text="Đang tải...", font=("Arial", 14, "bold"), text_color="black")
         self.lbl_welcome.pack(side="left")
         
         ctk.CTkButton(header, text="Đăng xuất", width=80, fg_color=COLOR_BG_RED, text_color=COLOR_ACCENT_RED, hover_color="#FECACA", 
-                      command=self.logout).pack(side="right", padx=20)
+                    command=self.logout).pack(side="right", padx=20)
 
-    # --- LOGIC LOAD DỮ LIỆU ---
+    # ================= LOGIC LOAD DỮ LIỆU =================
     def refresh_data(self):
+        """Hàm này được gọi mỗi khi chuyển sang màn hình Sinh viên"""
         user = self.controller.current_user
         if not user: return
         self.current_user_name = user.get('name', 'Sinh viên')
         self.lbl_welcome.configure(text=f"Xin chào, {self.current_user_name}")
         
+        # Lấy ID sinh viên từ User ID (VD: U-SV01 -> SV01)
         self.student_id = StudentController.get_student_id(user.get('id'))
         if self.student_id:
             self._load_subject_list()
@@ -73,6 +81,7 @@ class StudentView(ctk.CTkFrame):
             messagebox.showwarning("Cảnh báo", "Tài khoản này chưa liên kết hồ sơ Sinh viên!")
 
     def _load_subject_list(self):
+        """Hiển thị danh sách các lớp đã đăng ký bên Sidebar"""
         for w in self.subject_container.winfo_children(): w.destroy()
         
         classes = StudentController.list_enrolled_classes(self.student_id)
@@ -81,7 +90,7 @@ class StudentView(ctk.CTkFrame):
             return
 
         for idx, cls in enumerate(classes):
-            # Tính nhanh tỷ lệ chuyên cần
+            # Tính nhanh tỷ lệ chuyên cần để hiển thị preview
             _, counts = StudentController.attendance_history(self.student_id, cls['classID'])
             total = sum(counts.values()) if counts else 0
             rate = int((counts['present']/total)*100) if total > 0 else 100
@@ -89,10 +98,11 @@ class StudentView(ctk.CTkFrame):
             self._create_subject_card(cls, rate, is_first=(idx==0))
 
     def _create_subject_card(self, cls, rate, is_first):
+        """Tạo card nhỏ cho từng môn học"""
         card = ctk.CTkFrame(self.subject_container, fg_color=COLOR_WHITE, corner_radius=10)
         card.pack(fill="x", pady=5)
         
-        # Color indicator
+        # Thanh màu chỉ báo (Xanh/Vàng/Đỏ tùy tỷ lệ)
         col = COLOR_ACCENT_GREEN if rate >= 80 else (COLOR_ACCENT_YELLOW if rate >= 50 else COLOR_ACCENT_RED)
         ctk.CTkFrame(card, width=5, fg_color=col, corner_radius=0).pack(side="left", fill="y")
         
@@ -104,18 +114,20 @@ class StudentView(ctk.CTkFrame):
         
         ctk.CTkLabel(card, text=f"{rate}%", font=("Arial", 14, "bold"), text_color=col).pack(side="right", padx=15)
 
-        # Bind click
+        # Sự kiện click để xem chi tiết
         cmd = lambda e: self._load_detail(cls, rate)
         card.bind("<Button-1>", cmd)
         for w in [content] + content.winfo_children(): w.bind("<Button-1>", cmd)
 
+        # Mặc định load môn đầu tiên
         if is_first: self._load_detail(cls, rate)
 
-    # --- CHI TIẾT & ĐIỂM DANH ---
+    # ================= CHI TIẾT & ĐIỂM DANH =================
     def _load_detail(self, cls, rate):
+        """Hiển thị chi tiết lịch sử và nút điểm danh của môn được chọn"""
         for w in self.detail_card.winfo_children(): w.destroy()
 
-        # 1. Header chi tiết
+        # 1. Header chi tiết môn học
         header = ctk.CTkFrame(self.detail_card, fg_color="transparent")
         header.pack(fill="x", padx=30, pady=20)
         
@@ -124,23 +136,26 @@ class StudentView(ctk.CTkFrame):
         ctk.CTkLabel(info, text=cls['className'], font=("Arial", 24, "bold"), text_color=COLOR_TEXT_PRIMARY).pack(anchor="w")
         ctk.CTkLabel(info, text=f"Mã lớp: {cls['classID']}", font=("Arial", 14), text_color="gray").pack(anchor="w")
 
-        # === CHECK ACTIVE SESSION ===
+        # ===> KIỂM TRA CÓ PHIÊN ĐIỂM DANH ĐANG MỞ KHÔNG <===
         active_session = None
-        sessions = StudentController.upcoming_sessions(self.student_id)
-        for s in sessions:
-            # Logic: Đúng lớp + Đang mở (Open) + Có thể checkin (chưa điểm danh)
-            if s['classID'] == cls['classID'] and s['canCheckin']:
-                active_session = s
-                break
+        try:
+            # Lấy các session sắp tới/hiện tại
+            sessions = StudentController.upcoming_sessions(self.student_id)
+            for s in sessions:
+                # Logic: Đúng lớp + Đang mở (Open) + Có thể checkin (Trong ngày + Chưa điểm danh)
+                if s['classID'] == cls['classID'] and s['canCheckin']:
+                    active_session = s
+                    break
+        except Exception as e: print(e)
         
+        # Nếu có phiên đang mở -> Hiện nút to màu xanh
         if active_session:
-            # Nút Điểm Danh Nổi Bật
             btn = ctk.CTkButton(header, text="📍 ĐIỂM DANH NGAY", width=180, height=40,
                                 fg_color=COLOR_ACCENT_GREEN, hover_color="#047857", font=("Arial", 14, "bold"),
                                 command=lambda: self.open_checkin_popup(active_session, cls))
             btn.pack(side="right", padx=20)
         
-        # 2. Stats Boxes
+        # 2. Hộp thống kê (Có mặt, Vắng, Có phép)
         stats_frame = ctk.CTkFrame(self.detail_card, fg_color="transparent")
         stats_frame.pack(fill="x", padx=30, pady=10)
         stats_frame.grid_columnconfigure((0,1,2), weight=1)
@@ -152,7 +167,7 @@ class StudentView(ctk.CTkFrame):
         self._stat_box(stats_frame, 1, "Vắng", counts['absent']+counts['late'], COLOR_BG_RED, COLOR_ACCENT_RED)
         self._stat_box(stats_frame, 2, "Có phép", counts['excused'], COLOR_BG_YELLOW, COLOR_ACCENT_YELLOW)
 
-        # 3. Lịch sử Table
+        # 3. Bảng Lịch sử điểm danh
         ctk.CTkLabel(self.detail_card, text="Lịch sử điểm danh", font=("Arial", 16, "bold"), text_color=COLOR_TEXT_PRIMARY).pack(anchor="w", padx=30, pady=(20, 10))
         
         # Table Header
@@ -215,7 +230,7 @@ class StudentView(ctk.CTkFrame):
         
         ctk.CTkFrame(parent, height=1, fg_color="#E5E5E5").pack(fill="x")
 
-    # ================= POPUP ĐIỂM DANH =================
+    # ================= POPUP: CÁC PHƯƠNG THỨC ĐIỂM DANH =================
     def open_checkin_popup(self, session, cls):
         dialog = ctk.CTkToplevel(self)
         dialog.title("Điểm danh")
@@ -226,32 +241,34 @@ class StudentView(ctk.CTkFrame):
         
         ctk.CTkLabel(dialog, text=f"Lớp: {cls['className']}", font=("Arial", 16, "bold"), text_color="black").pack(pady=15)
         
+        # Tab View cho 3 phương thức
         tab = ctk.CTkTabview(dialog, height=250, text_color="black")
         tab.pack(fill="both", expand=True, padx=20, pady=5)
         
-        # 1. Tự động
+        # 1. Tự động (Giả lập check GPS/Wifi)
         t1 = tab.add("Tự động")
-        ctk.CTkLabel(t1, text="Xác thực vị trí lớp học...", text_color="gray").pack(pady=30)
+        ctk.CTkLabel(t1, text="Đang xác thực vị trí lớp học...", text_color="gray").pack(pady=30)
         ctk.CTkButton(t1, text="Xác nhận có mặt", fg_color=COLOR_ACCENT_GREEN, 
-                      command=lambda: self._do_checkin(session, cls, dialog, 'GPS')).pack()
+                    command=lambda: self._do_checkin(session, cls, dialog, 'GPS')).pack()
 
-        # 2. Mã số
+        # 2. Mã số (Code)
         t2 = tab.add("Nhập Mã")
         ctk.CTkLabel(t2, text="Nhập mã số giảng viên cung cấp:", text_color="gray").pack(pady=10)
         entry = ctk.CTkEntry(t2, placeholder_text="Ví dụ: 8921")
         entry.pack(pady=10)
         ctk.CTkButton(t2, text="Gửi mã", fg_color=COLOR_BLUE, 
-                      command=lambda: self._do_checkin(session, cls, dialog, 'Code', entry.get())).pack(pady=10)
+                    command=lambda: self._do_checkin(session, cls, dialog, 'Code', entry.get())).pack(pady=10)
 
-        # 3. QR Code
+        # 3. Quét QR (Demo)
         t3 = tab.add("Quét QR")
         f_qr = ctk.CTkFrame(t3, width=120, height=120, fg_color="black")
         f_qr.pack(pady=10)
         ctk.CTkLabel(f_qr, text="[CAM]", text_color="white").place(relx=0.5, rely=0.5, anchor="center")
-        ctk.CTkButton(t3, text="Quét ngay", fg_color="black", 
-                      command=lambda: self._do_checkin(session, cls, dialog, 'QR')).pack(pady=5)
+        ctk.CTkButton(t3, text="Quét ngay", fg_color="black",
+                    command=lambda: self._do_checkin(session, cls, dialog, 'QR')).pack(pady=5)
 
     def _do_checkin(self, session, cls, dialog, method, code=None):
+        """Xử lý gọi Controller để lưu điểm danh"""
         if method == 'Code' and (not code or len(code) < 3):
             messagebox.showerror("Lỗi", "Mã không hợp lệ")
             return
@@ -260,7 +277,8 @@ class StudentView(ctk.CTkFrame):
         if success:
             messagebox.showinfo("Thành công", msg)
             dialog.destroy()
-            self._load_detail(cls, 100) # Reload UI (Rate tạm để 100, hàm load sẽ tính lại)
+            # Tải lại chi tiết để cập nhật trạng thái
+            self._load_detail(cls, 100)
         else:
             messagebox.showerror("Thất bại", msg)
 
